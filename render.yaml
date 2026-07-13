@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: recharge-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PUPPETEER_SKIP_DOWNLOAD
+        value: "true"
+      - key: PUPPETEER_EXECUTABLE_PATH
+        value: /usr/bin/chromium
+    healthCheckPath: /api/plans?mobileNo=9933718668
